@@ -1,0 +1,68 @@
+:host {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+}
+
+label {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 10px 0;
+  color: #184848;
+}
+
+label input {
+  border: none;
+  border-bottom: 1px solid #184848;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  border-left: 2px solid #184848;
+  border-right: 2px solid #184848;
+  padding: 10px;
+
+}
+
+header {
+  background: #184848;
+}
+
+header h2 {
+  color: white;
+  text-align: center;
+}
+
+footer {
+  background: darkgray;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+footer button {
+  border: none;
+  background: #266969;
+  border-radius: 5px;
+  color: white;
+  font-size: 18px;
+  padding: 10px 20px;
+  margin: 15px;
+}
+
+svg {
+  position: absolute;
+  width: 300px;
+  background: #3333337a;
+}
+

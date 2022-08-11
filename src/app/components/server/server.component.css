@@ -1,0 +1,99 @@
+:host {
+  display: block;
+  width: 1200px;
+  margin: 0 auto;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #276b95;
+}
+
+h2 {
+  color: white;
+  margin-left: 30px;
+}
+
+.row {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.button, button {
+  border: none;
+  background: #184848;
+  color: white;
+  height: 40px;
+  margin-right: 10px;
+}
+
+svg {
+  display: inline-block;
+  width: 40px;
+  height: 36px;
+}
+
+.loading {
+  display: block;
+  text-align: center;
+  padding: 40px;
+}
+
+.loading svg {
+  width: 100px;
+  height: 100px;
+}
+
+button.material-icons {
+  background: transparent;
+  width: 40px;
+  padding: 0;
+  margin: 0;
+  font-size: 32px;
+  color: #184848;
+}
+
+table {
+  width: 100%;
+  margin: 20px auto;
+  border-collapse: collapse;
+}
+
+tr {
+  border-top: 2px solid #276b95;
+}
+th{
+  padding: 10px;
+}
+td {
+  border-top: 1px solid #184848;
+  margin: 0;
+  text-align: center;
+
+}
+
+.bagde {
+  display: inline-block;
+  border: none;
+  padding: 5px;
+  border-radius: 5px;
+  color: white;
+}
+
+.badge-success {
+  background: #184848;
+
+}
+
+.badge-danger {
+  background: brown;
+}
+
+.alert-danger{
+  margin: 20px;
+  display: block;
+  background: #de6f6f;
+}

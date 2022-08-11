@@ -1,0 +1,49 @@
+<div class="container">
+  <header>
+    <h2>Add Server</h2>
+    <button class="material-icons close-btn">close</button>
+  </header>
+  <form #saveForm="ngForm" (ngSubmit)="addData(saveForm)">
+    <label>IP<input type="text" name="ipAddress" ngModel required></label>
+    <label>Name<input type="text" name="name" ngModel></label>
+    <div class="row">
+      <label>Memory<input type="text" name="memory" ngModel required></label>
+      <label>Type<input type="text" name="type" ngModel required></label>
+
+    </div>
+    <label>Status
+      <select  name="status" ngModel="SERVER_DOWN" required>
+        <option value="ALL">ALL</option>
+        <option value="SERVER_UP">SERVER UP</option>
+        <option value="SERVER_DOWN">SERVER DOWN</option>
+      </select>
+    </label>
+
+  <footer>
+    <button (click)="action.emit('exit')">Cancel</button>
+    <button type="submit" >
+      <ng-container *ngIf="adding">
+        <svg version="1.1" id="L9" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+             x="0px"
+             y="0px"
+             viewBox="0 0 100 100" enable-background="new 0 0 0 0" xml:space="preserve">
+    <path fill="#184848"
+          d="M73,50c0-12.7-10.3-23-23-23S27,37.3,27,50 M30.9,50c0-10.5,8.5-19.1,19.1-19.1S69.1,39.5,69.1,50">
+      <animateTransform
+        attributeName="transform"
+        attributeType="XML"
+        type="rotate"
+        dur="1s"
+        from="0 50 50"
+        to="360 50 50"
+        repeatCount="indefinite"/>
+  </path>
+</svg>
+      </ng-container>
+      {{adding?'Save':'Add'}}</button>
+  </footer>
+  </form>
+</div>
+<div class="background"></div>
+
+

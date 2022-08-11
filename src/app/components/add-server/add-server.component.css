@@ -1,0 +1,81 @@
+:host {
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #00000094;
+  opacity: 50%;
+  z-index: 2;
+}
+
+header {
+  border-bottom: 1px solid lightgray;
+  position: relative;
+  padding: 10px;
+}
+
+.close-btn {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: darkgray;
+  border: none;
+  background: transparent;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  z-index: 9990;
+
+}
+
+form > * {
+  margin: 10px;
+}
+
+label {
+  display: block;
+color: darkgray;
+}
+
+input {
+  display: block;
+  width: 100%;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+}
+
+select {
+  width: 100%;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f3f2f2;
+  padding: 20px;
+}
+
+footer button {
+  width: calc(50% - 10px);
+  padding: 5px;
+  height: 36px;
+  border: none;
+  background: lightgreen;
+}
