@@ -20,7 +20,7 @@ export class AuthService {
     const data = localStorage.getItem('refresh_token');
     if (data) {
       const decode: any = jwtDecode(data)
-      if (decode && decode.iss === `${this.api}/api/login`) {
+      if (decode && decode.iss === `${this.api}/users/api/login`) {
         this.refresh_token = data;
       }
     }
@@ -32,7 +32,7 @@ export class AuthService {
     body.set('username', data.username);
     body.set('password', data.password);
     console.log(body.toString())
-    return this.http.post(this.api + "/api/login", body.toString(), {
+    return this.http.post(this.api + "/users/api/login", body.toString(), {
       responseType: 'json',
       headers
     }).pipe(map((res: LoginResult) => this.handleResult(res)),
@@ -41,7 +41,7 @@ export class AuthService {
 
   refreshToken(): Observable<any> {
     if (this.refresh_token) {
-      return this.http.post(this.api + '/user/token/refresh', null)
+      return this.http.post(this.api + '/users/token/refresh', null)
         .pipe(map((res: LoginResult) => this.handleResult(res)),
           catchError((err) => this.handleError(err)))
     }

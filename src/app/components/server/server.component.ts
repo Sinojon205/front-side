@@ -26,7 +26,7 @@ export class ServerComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.appState$ = this.service.server$.pipe(
+    this.appState$ = this.service.server$().pipe(
       map(response => {
         this.dataSubject.next(response);
         return {dataState: DataState.LOADED_STATE, appData: response}
@@ -118,5 +118,9 @@ export class ServerComponent implements OnInit {
       a.click();
       document.body.removeChild(a);
     }
+  }
+
+  getImageUrl(imgUrl: any) {
+    return this.service.api + '/images/' + imgUrl;
   }
 }

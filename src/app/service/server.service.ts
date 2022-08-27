@@ -4,32 +4,34 @@ import {catchError, Observable, tap, throwError} from "rxjs";
 import {CustomResponse} from "../interface/custom-response";
 import {Server} from "../interface/server";
 import {Status} from "../enum/status.enum";
+import {environment} from "../../environments/environment";
 
 @Injectable({
   providedIn: 'root'
 })
 export class ServerService {
-  private readonly apiUrl = 'http://localhost:8080'
-  ;
+  api = 'http://localhost:8080';
 
   constructor(private http: HttpClient) {
+    this.api = environment.api + ':' + environment.port
+    console.log(this.api)
   }
 
-  server$ = <Observable<CustomResponse>>this.http.get<CustomResponse>(`${this.apiUrl}/server/list`).pipe(
+  server$ =()=> <Observable<CustomResponse>>this.http.get<CustomResponse>(`${this.api}/server/list`).pipe(
     tap(console.log),
     catchError(this.handleError));
 
 
-  save$ = (server: Server) => <Observable<CustomResponse>>this.http.post(`${this.apiUrl}/server/save`, server).pipe(
+  save$ = (server: Server) => <Observable<CustomResponse>>this.http.post(`${this.api}/server/save`, server).pipe(
     tap(console.log),
     catchError(this.handleError));
 
 
-  ping$ = (ipAddress: string) => <Observable<CustomResponse>>this.http.get<CustomResponse>(`${this.apiUrl}/server/ping/${ipAddress}`).pipe(
+  ping$ = (ipAddress: string) => <Observable<CustomResponse>>this.http.get<CustomResponse>(`${this.api}/server/ping/${ipAddress}`).pipe(
     tap(console.log),
     catchError(this.handleError));
 
-  delete$ = (id: number) => <Observable<CustomResponse>>this.http.delete<CustomResponse>(`${this.apiUrl}/server/delete/${id}`).pipe(
+  delete$ = (id: number) => <Observable<CustomResponse>>this.http.delete<CustomResponse>(`${this.api}/server/delete/${id}`).pipe(
     tap(console.log),
     catchError(this.handleError));
 

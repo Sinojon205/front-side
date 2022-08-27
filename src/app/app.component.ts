@@ -16,17 +16,21 @@ export class AppComponent {
     this.authService.refreshToken().subscribe((res) => {
       if (res) {
         this.router.navigate(['/server'])
+      } else {
+        this.router.navigate(['/login'])
       }
+
     });
     this.refreshTokenSub = interval(30 * this.minut).pipe(
       mergeMap(() => this.authService.refreshToken()),
       catchError((error) => {
         console.log(error);
+        this.router.navigate(['/login'])
         return of(false);
       })
     ).subscribe((res) => {
       if (res) {
-        this.router.navigate(['/server'])
+        //   this.router.navigate(['/server'])
       }
     });
   }

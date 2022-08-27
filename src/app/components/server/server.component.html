@@ -65,7 +65,7 @@
         <th>Actions</th>
       </tr>
       <tr *ngFor="let server of appState.appData.data.servers">
-        <td><img [src]="server.imgUrl" style="height: 40px;width: 40px;"></td>
+        <td><img [src]="getImageUrl(server.imgUrl)" style="height: 40px;width: 40px;"></td>
         <td>{{server.ipAddress}}</td>
         <td>{{server.name}}</td>
         <td>{{server.memory}}</td>
